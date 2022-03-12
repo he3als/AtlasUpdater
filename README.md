@@ -8,6 +8,13 @@ Atlas Updater is a simple batch script to update [Atlas'](https://github.com/Atl
 https://user-images.githubusercontent.com/65787561/158027428-1521010f-6d53-44cd-ae27-09b98cc6af2f.mp4
 
 ## Download
+There's two ways you can download the script, you can either download the latest one from the GitHub repository or the known-good latest release.
+
+### Releases
+1. [Click here](https://github.com/he3als/AtlasUpdater/releases/)
+2. Download the latest batch file
+
+### From GitHub
 1. Open [this link](https://raw.githubusercontent.com/he3als/AtlasUpdater/main/AtlasUpdaterScript.bat) in a new tab
 2. Right click and click 'Save As' and save it as a `.bat` file
 
