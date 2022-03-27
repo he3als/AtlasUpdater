@@ -10,7 +10,7 @@ set automaticupdatecheck=true
 set backup=true
 
 :: You shouldn't need to change anything from here
-set version=1.1
+set version=1.2
 title Atlas Update Script - Made by he3als - Version: %version%
 fltmc >nul 2>&1 || (
     echo Administrator privileges are required.
