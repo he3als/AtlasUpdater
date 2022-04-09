@@ -3,6 +3,8 @@
 
 Atlas Updater is a simple batch script to update [Atlas'](https://github.com/Atlas-OS/Atlas) (a free and performant modification to Windows 10) folders (the [AtlasModules](https://github.com/Atlas-OS/Atlas/tree/main/src/AtlasModules) and [Atlas desktop](https://github.com/Atlas-OS/Atlas/tree/main/src/Desktop/Atlas) folders). Useful to contributors, general testers or people that are curious. Tested on Windows 10 21H2 with the latest PowerShell. Feel free to make a pull request to improve the script! :)
 
+**Changelog:** https://raw.githubusercontent.com/he3als/AtlasUpdater/main/changelog.txt
+
 ## Showcase
 
 https://user-images.githubusercontent.com/65787561/158027428-1521010f-6d53-44cd-ae27-09b98cc6af2f.mp4
