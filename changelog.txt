@@ -1,0 +1,11 @@
+o Version 1.0 (12/03/22)
+    - First Release
+    
+o Version 1.1 (27/03/22) (broken)
+    - Fixes https://github.com/he3als/AtlasUpdater/issues/3
+    - Fixes https://github.com/he3als/AtlasUpdater/issues/1
+    - Made script more readable
+    - Fixed some other issues
+
+o Version 1.2 (27/03/22)
+    - Fixes updating issue with 1.1
