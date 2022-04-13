@@ -10,7 +10,7 @@ set automaticupdatecheck=true
 set backup=true
 
 :: You shouldn't need to change anything from here
-set version=1.2
+set version=1.3
 title Atlas Update Script - Made by he3als - Version: %version%
 fltmc >nul 2>&1 || (
     echo Administrator privileges are required.
@@ -199,7 +199,7 @@ goto copyfolders
 :copyfolders
 xcopy "%TEMP%\tempatlas\Atlas-main\src\AtlasModules" "C:\Windows\AtlasModules" /e /i /h /k /y /q
 if %ERRORLEVEL%==0 (echo Copied AtlasModules folder) ELSE (echo Failed copying the AtlasModules folder.&pause&exit)
-xcopy "%TEMP%\tempatlas\Atlas-main\src\Desktop\Atlas" "%TEMP%\Desktop\Atlas" /e /i /h /k /y /q
+xcopy "%TEMP%\tempatlas\Atlas-main\src\Desktop\Atlas" "%USERPROFILE%\Desktop\Atlas" /e /i /h /k /y
 if %ERRORLEVEL%==0 (echo Copied Atlas desktop folder) ELSE (echo Failed copying the Atlas desktop folder.&pause&exit)
 goto deletetemp
 
