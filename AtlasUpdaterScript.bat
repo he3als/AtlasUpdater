@@ -199,7 +199,7 @@ goto copyfolders
 :copyfolders
 xcopy "%TEMP%\tempatlas\Atlas-main\src\AtlasModules" "C:\Windows\AtlasModules" /e /i /h /k /y /q
 if %ERRORLEVEL%==0 (echo Copied AtlasModules folder) ELSE (echo Failed copying the AtlasModules folder.&pause&exit)
-xcopy "%TEMP%\tempatlas\Atlas-main\src\Desktop\Atlas" "%USERPROFILE%\Desktop\Atlas" /e /i /h /k /y
+xcopy "%TEMP%\tempatlas\Atlas-main\src\Desktop\Atlas" "%USERPROFILE%\Desktop\Atlas" /e /i /h /k /y /q
 if %ERRORLEVEL%==0 (echo Copied Atlas desktop folder) ELSE (echo Failed copying the Atlas desktop folder.&pause&exit)
 goto deletetemp
 
