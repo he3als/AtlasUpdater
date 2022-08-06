@@ -15,7 +15,7 @@ title Atlas Update Script - Made by he3als - Version: %version%
 fltmc >nul 2>&1 || (
     echo Administrator privileges are required.
     PowerShell -NoProfile Start -Verb RunAs '%0' 2> nul || (
-        echo Right-click on the script and select "Run as administrator".
+        echo Right-click on the script and select 'Run as administrator'.
         pause & exit 1
     )
     exit 0
@@ -24,7 +24,7 @@ fltmc >nul 2>&1 || (
 :checkforupdatesa
 if %automaticupdatecheck%==false set updated=disabled && goto versiondisplay
 del /f %TEMP%\Downloads\VERSIONATLASUPDATER >nul 2>&1
-Powershell.exe -NoProfile -Command "Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/he3als/AtlasUpdater/main/VERSIONATLASUPDATER' -OutFile %TEMP%\VERSIONATLASUPDATER"
+PowerShell -NoProfile -Command "Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/he3als/AtlasUpdater/main/VERSIONATLASUPDATER' -OutFile %TEMP%\VERSIONATLASUPDATER"
 if %ERRORLEVEL%==0 (
 	echo Downloaded VERSIONATLASUPDATER file to check if there's updates...
 	echo.
@@ -33,7 +33,7 @@ if %ERRORLEVEL%==0 (
 	cls
 	set updated=failed
 	echo Failed checking for updates!
-	echo You could be offline or the repository may be inaccessable.
+	echo You could be offline or the repository may be inaccessible.
 	echo You can disable update checking by editing the batch script.
 	echo You will now be taken to the menu.
 	pause
@@ -51,7 +51,7 @@ if %ERRORLEVEL%==0 (
 )
 
 :updateavaliable
-for /f %%i in ('Powershell.exe -NoProfile -NoLogo -Command "Get-Content %TEMP%\Downloads\VERSIONATLASUPDATER -First 1"') do set newversionnumber=%%i
+for /f %%i in ('PowerShell -NoProfile -NoLogo -Command "Get-Content %TEMP%\Downloads\VERSIONATLASUPDATER -First 1"') do set newversionnumber=%%i
 set updated=false
 echo Tip: You can disable automatic update checking by easily editing the batch script.
 echo An update was found!
@@ -66,7 +66,7 @@ for /f %%i in ('Powershell.exe -NoProfile -NoLogo -Command "Get-Content %TEMP%\D
 :: Error detection always fails here? Not sure why, the rest of the script seemingly works fine...
 :: if %ERRORLEVEL%==0 (echo Set version number in PowerShell...
 :: ) ELSE (echo Failed setting version number in PowerShell^!&pause&exit)
-Powershell.exe -NoProfile -Command "Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/he3als/AtlasUpdater/main/AtlasUpdaterScript.bat' -OutFile %TEMP%\Downloads\AtlasUpdaterScript_$env:newversionnumber.bat"
+PowerShell -NoProfile -Command "Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/he3als/AtlasUpdater/main/AtlasUpdaterScript.bat' -OutFile %TEMP%\Downloads\AtlasUpdaterScript_$env:newversionnumber.bat"
 if %ERRORLEVEL%==0 (
 	echo Downloaded new script...
 ) ELSE (
@@ -101,7 +101,7 @@ echo.
 
 :menu
 echo Warning: This script can do un-wanted changes to your computer, use with caution and review the script first!
-echo This script is for https://github.com/Atlas-OS/Atlas - a Windows mod for mainly gaming.
+echo This script is for https://github.com/Atlas-OS/Atlas - Windows mod designed mainly for games.
 echo What would you like to do?
 echo 1. Run the post-install script again ^(dangerous^)
 echo 2. Update the Atlas desktop folder and AtlasModules folder
@@ -125,7 +125,7 @@ IF %ERRORLEVEL%==2 goto versiondisplay
 :postinstallconfirm
 cls
 color 4F
-echo Are you 100^% sure? 
+echo Are you 100% sure? 
 echo This will run the post install script that first runs when you install Atlas and this is potentially dangerous to do.
 timeout /T 10 /NOBREAK
 CHOICE /N /C:YN /M "Continue? [Y/N]"
@@ -149,9 +149,9 @@ echo.
 :: No error detection as they may not exist
 rd /s /q %TEMP%\tempatlas >nul 2>&1
 del /f %TEMP%\tempatlas.zip >nul 2>&1
-Powershell.exe -NoProfile -Command "Invoke-WebRequest -Uri 'https://github.com/Atlas-OS/Atlas/archive/refs/heads/main.zip' -OutFile '%TEMP%\tempatlas.zip'"
+PowerShell -NoProfile -Command "Invoke-WebRequest -Uri 'https://github.com/Atlas-OS/Atlas/archive/refs/heads/main.zip' -OutFile '%TEMP%\tempatlas.zip'"
 if %ERRORLEVEL%==0 (echo Downloaded Atlas zip successfully.) ELSE (echo Failed downloading Atlas zip.&pause&exit)
-Powershell.exe -NoProfile -Command "Expand-Archive '%TEMP%\tempatlas.zip' -DestinationPath '%TEMP%\tempatlas' -Force"
+PowerShell -NoProfile -Command "Expand-Archive '%TEMP%\tempatlas.zip' -DestinationPath '%TEMP%\tempatlas' -Force"
 if %ERRORLEVEL%==0 (echo Expanded the Atlas zip successfully.) ELSE (echo Failed extracting Atlas zip.&pause&exit)
 if %backup%==true (goto backupfolders) else (goto delfolders)
 
@@ -164,7 +164,7 @@ if %ERRORLEVEL%==0 (
 	echo Renamed old Atlas desktop folder
 ) ELSE (
 	echo Failed renaming old Atlas desktop folder, it may not exist.
-	echo Things might break if you continue^!
+	echo Things might break if you continue!
 	pause
 )
 ren C:\Windows\AtlasModules AtlasModules_Backup
@@ -172,7 +172,7 @@ if %ERRORLEVEL%==0 (
 	echo Renamed old AtlasModules folder
 ) ELSE (
 	echo Failed renaming old AtlasModules folder, it may not exist.
-	echo Things might break if you continue^!
+	echo Things might break if you continue!
 	pause
 )
 goto copyfolders
@@ -183,7 +183,7 @@ if %ERRORLEVEL%==0 (
 	echo Deleted Atlas desktop folder
 ) ELSE (
 	echo Failed deleting Atlas desktop folder, it may not exist.
-	echo Things might break if you continue^!
+	echo Things might break if you continue!
 	pause
 )
 rd /s /q C:\Windows\AtlasModules
@@ -191,7 +191,7 @@ if %ERRORLEVEL%==0 (
 	echo Deleted AtlasModules folder
 ) ELSE (
 	echo Failed deleting AtlasModules folder, it may not exist.
-	echo Things might break if you continue^!
+	echo Things might break if you continue!
 	pause
 )
 goto copyfolders
