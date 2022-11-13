@@ -62,7 +62,7 @@ IF %ERRORLEVEL%==2 goto versiondisplay
 :update
 cls
 set %ERRORLEVEL%==0
-for /f %%i in ('Powershell.exe -NoProfile -NoLogo -Command "Get-Content %TEMP%\Downloads\VERSIONATLASUPDATER -First 1"') do set newversionnumber=%%i
+for /f %%i in ('PowerShell -NoProfile -NoLogo -Command "Get-Content %TEMP%\Downloads\VERSIONATLASUPDATER -First 1"') do set newversionnumber=%%i
 :: Error detection always fails here? Not sure why, the rest of the script seemingly works fine...
 :: if %ERRORLEVEL%==0 (echo Set version number in PowerShell...
 :: ) ELSE (echo Failed setting version number in PowerShell^!&pause&exit)
@@ -100,10 +100,10 @@ echo Current Version: %version%
 echo.
 
 :menu
-echo Warning: This script can do un-wanted changes to your computer, use with caution and review the script first!
-echo This script is for https://github.com/Atlas-OS/Atlas - Windows mod designed mainly for games.
+echo Warning: This script can do unwanted changes to your computer, use with caution and review the script first!
+echo This script is for https://github.com/Atlas-OS/Atlas - Windows modification designed mainly for games.
 echo What would you like to do?
-echo 1. Run the post-install script again ^(dangerous^)
+echo 1. Run the post-install script again (dangerous)
 echo 2. Update the Atlas desktop folder and AtlasModules folder
 echo 3. Visit the Atlas repository
 echo 4. Visit the Atlas Updater repostiory
@@ -117,7 +117,7 @@ IF %ERRORLEVEL%==5 exit
 
 :postinstall
 cls
-echo You should update Atlas^' folders before doing this, doing this is dangerous and can cause issues!
+echo You should update Atlas' folders before doing this, doing this is dangerous and can cause issues!
 CHOICE /N /C:YN /M "Continue? [Y/N]"
 IF %ERRORLEVEL%==1 goto postinstallconfirm
 IF %ERRORLEVEL%==2 goto versiondisplay
@@ -161,7 +161,7 @@ rd /s /q C:\Windows\AtlasModules_Backup >nul 2>&1
 echo Attempted to delete previous backups...
 ren %USERPROFILE%\Desktop\Atlas Atlas_Backup
 if %ERRORLEVEL%==0 (
-	echo Renamed old Atlas desktop folder
+	echo Renamed old Atlas desktop folder.
 ) ELSE (
 	echo Failed renaming old Atlas desktop folder, it may not exist.
 	echo Things might break if you continue!
@@ -169,7 +169,7 @@ if %ERRORLEVEL%==0 (
 )
 ren C:\Windows\AtlasModules AtlasModules_Backup
 if %ERRORLEVEL%==0 (
-	echo Renamed old AtlasModules folder
+	echo Renamed old AtlasModules folder.
 ) ELSE (
 	echo Failed renaming old AtlasModules folder, it may not exist.
 	echo Things might break if you continue!
@@ -180,7 +180,7 @@ goto copyfolders
 :delfolders
 rd /s /q %USERPROFILE%\Desktop\Atlas
 if %ERRORLEVEL%==0 (
-	echo Deleted Atlas desktop folder
+	echo Deleted Atlas desktop folder.
 ) ELSE (
 	echo Failed deleting Atlas desktop folder, it may not exist.
 	echo Things might break if you continue!
@@ -188,7 +188,7 @@ if %ERRORLEVEL%==0 (
 )
 rd /s /q C:\Windows\AtlasModules
 if %ERRORLEVEL%==0 (
-	echo Deleted AtlasModules folder
+	echo Deleted AtlasModules folder.
 ) ELSE (
 	echo Failed deleting AtlasModules folder, it may not exist.
 	echo Things might break if you continue!
