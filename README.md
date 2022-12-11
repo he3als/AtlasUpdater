@@ -26,5 +26,6 @@ https://user-images.githubusercontent.com/65787561/158017652-45312dc0-bbfd-4e15-
 - Running the Atlas post-installation script (dangerous to do)
 
 ## Dependancies
-- PowerShell
+- cURL - default on 1803+, Atlas is 1803
 - Basic Windows utilities (`findstr`, `fltmc`, etc...)
+- 7-Zip and PowerShell
