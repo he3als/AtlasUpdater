@@ -178,7 +178,8 @@ if %errorlevel%==2 goto versiondisplay
 echo]
 rd /s /q %TEMP%\tempatlas >nul 2>&1
 del /f %TEMP%\tempatlas.zip >nul 2>&1
-curl -l -s "https://github.com/Atlas-OS/Atlas/archive/refs/heads/main.zip" -o "%TEMP%\tempatlas.zip"
+echo Downloading the Atlas repository...
+curl -L -s "https://github.com/Atlas-OS/Atlas/archive/refs/heads/main.zip" -o "%TEMP%\tempatlas.zip"
 if %errorlevel%==0 (echo Downloaded Atlas zip successfully.) else (echo Failed downloading Atlas zip. & pause & exit /b 1)
 where 7z >nul 2>&1
 if not %errorlevel%==0 (
