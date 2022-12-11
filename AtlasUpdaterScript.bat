@@ -133,10 +133,11 @@ if %errorlevel%==5 exit /b 0
 
 :postinstall
 if not exist "%windir%\AtlasModules\atlas-config.bat" (
+	echo]
 	echo 'atlas-config.bat' is not found.
 	echo You can not continue.
 	pause
-	exit /b 1
+	goto versiondisplay
 )
 cls
 echo You should update Atlas' folders before doing this, doing this is dangerous and can cause issues!
