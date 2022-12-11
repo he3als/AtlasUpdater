@@ -166,7 +166,7 @@ if %errorlevel%==2 goto versiondisplay
 cls
 if %backup%==true (
 	echo Warning: Your current Atlas folder will be backed up and renamed.
-	echo If there is a previous backup, it will be deleted.
+	echo If there is a previous backup, it will be renamed to something like Atlas_Backup_1.
 ) else (
 	echo Warning: Your current Atlas folder on your desktop and AtlasModules will be deleted permenantly!
 )
