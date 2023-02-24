@@ -12,12 +12,8 @@ Feel free to make a pull request to improve the script! :)
 https://user-images.githubusercontent.com/65787561/158027428-1521010f-6d53-44cd-ae27-09b98cc6af2f.mp4
 
 ## Download
-1. Open [this link](https://raw.githubusercontent.com/he3als/AtlasUpdater/main/AtlasUpdaterScript.bat) in a new tab
-2. Right click and click 'Save As' and save it as a `.bat` file
-
-https://user-images.githubusercontent.com/65787561/158017652-45312dc0-bbfd-4e15-b7cf-e45e51232519.mp4
-
-**Note: Your browser may save it as a `.txt` and if that is the case, then just rename it to `.bat`.**
+1. Open [this link](https://cdn.staticaly.com/gh/he3als/AtlasUpdater/main/AtlasUpdaterScript.bat) in a new tab.
+2. The download should start automatically.
 
 **If you can not download it directly, [download the .zip](https://github.com/he3als/AtlasUpdater/archive/refs/heads/main.zip) and extract it.**
 
